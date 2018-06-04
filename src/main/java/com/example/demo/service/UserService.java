@@ -64,8 +64,8 @@ public class UserService {
 		
 	}
 	
-	//@ReadDataSource
-	@WriteDataSource
+	@ReadDataSource
+	//@WriteDataSource
 	public User findById(String id){
 		User u = this.userMapper.findById(id);
 		return u;
