@@ -1,0 +1,73 @@
+logging:
+  config: classpath:logback.xml
+server:
+  port: 80
+
+mysql:
+    datasource:
+        readSize: 2  #读库个数
+        type: com.alibaba.druid.pool.DruidDataSource
+        write:
+           url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=utf-8
+           username: root
+           password: root
+           driver-class-name: com.mysql.jdbc.Driver
+           minIdle: 5
+           maxActive: 100
+           initialSize: 10
+           maxWait: 60000
+           timeBetweenEvictionRunsMillis: 60000
+           minEvictableIdleTimeMillis: 300000
+           validationQuery: select 'x'
+           testWhileIdle: true
+           testOnBorrow: false
+           testOnReturn: false
+           poolPreparedStatements: true
+           maxPoolPreparedStatementPerConnectionSize: 50
+           removeAbandoned: true
+           filters: stat
+        read01:
+           url: jdbc:mysql://127.0.0.1:3306/test1?useUnicode=true&amp;characterEncoding=utf-8
+           username: root
+           password: root
+           driver-class-name: com.mysql.jdbc.Driver
+           minIdle: 5
+           maxActive: 100
+           initialSize: 10
+           maxWait: 60000
+           timeBetweenEvictionRunsMillis: 60000
+           minEvictableIdleTimeMillis: 300000
+           validationQuery: select 'x'
+           testWhileIdle: true
+           testOnBorrow: false
+           testOnReturn: false
+           poolPreparedStatements: true
+           maxPoolPreparedStatementPerConnectionSize: 50
+           removeAbandoned: true
+           filters: stat
+        read02:
+           url: jdbc:mysql://127.0.0.1:3306/test_pwf?useUnicode=true&amp;characterEncoding=utf-8
+           username: root
+           password: root
+           driver-class-name: com.mysql.jdbc.Driver
+           minIdle: 5
+           maxActive: 100
+           initialSize: 10
+           maxWait: 60000
+           timeBetweenEvictionRunsMillis: 60000
+           minEvictableIdleTimeMillis: 300000
+           validationQuery: select 'x'
+           testWhileIdle: true
+           testOnBorrow: false
+           testOnReturn: false
+           poolPreparedStatements: true
+           maxPoolPreparedStatementPerConnectionSize: 50
+           removeAbandoned: true
+           filters: stat
+
+mybatis:
+  configuration:
+   #配置项：开启下划线到驼峰的自动转换. 作用：将数据库字段根据驼峰规则自动注入到对象属性。
+    map-underscore-to-camel-case: true
+
+
